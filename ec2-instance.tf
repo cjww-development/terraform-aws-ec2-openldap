@@ -3,10 +3,10 @@ data "aws_ami" "amazon_linux_2" {
 
   filter {
     name   = "name"
-    values = ["amzn2-ami-hvm*"]
+    values = ["ubuntu/images/ubuntu-*-*-amd64-server-*"]
   }
 
-  owners = ["amazon"]
+  owners = ["099720109477"]
 }
 
 resource "aws_instance" "openldap" {
