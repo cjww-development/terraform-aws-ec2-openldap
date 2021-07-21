@@ -24,14 +24,21 @@ No modules.
 | [aws_default_subnet.default_subnet_b](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/default_subnet) | resource |
 | [aws_iam_instance_profile.openldap_instance_profile](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_instance_profile) | resource |
 | [aws_iam_role.openldap_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
+| [aws_security_group.https_traffic](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
+| [aws_security_group.ldap_traffic](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
+| [aws_security_group.outbound_traffic](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
 | [aws_iam_policy_document.openldap_role_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_allowed_http_ip_cidr_blocks_inbound"></a> [allowed\_http\_ip\_cidr\_blocks\_inbound](#input\_allowed\_http\_ip\_cidr\_blocks\_inbound) | Networks that are allowed to access the ec2 instance via http (port 80). | `list(string)` | n/a | yes |
+| <a name="input_allowed_ldap_ip_cidr_blocks_inbound"></a> [allowed\_ldap\_ip\_cidr\_blocks\_inbound](#input\_allowed\_ldap\_ip\_cidr\_blocks\_inbound) | Networks that are allowed to access the ec2 instance via http (port 389). | `list(string)` | n/a | yes |
+| <a name="input_allowed_outbound_cidr_blocks"></a> [allowed\_outbound\_cidr\_blocks](#input\_allowed\_outbound\_cidr\_blocks) | Networks that are allowed to be accessed by ec2 instance on outbound connections. | `list(string)` | n/a | yes |
 | <a name="input_availability_zone"></a> [availability\_zone](#input\_availability\_zone) | The AZ that the subnet should be running in. | `string` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | AWS region the IaC should be deployed into. | `string` | n/a | yes |
+| <a name="input_tags"></a> [tags](#input\_tags) | Tags associated with resources. | `map(string)` | n/a | yes |
 
 ## Outputs
 
