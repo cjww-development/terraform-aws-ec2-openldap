@@ -20,7 +20,17 @@ variable "allowed_ldap_ip_cidr_blocks_inbound" {
 
 variable "allowed_outbound_cidr_blocks" {
   type        = list(string)
-  description = "Networks that are allowed to be accessed by ec2 instance on outbound connections."
+  description = "Networks that are allowed tobe accessed by ec2 instance on outbound connections."
+}
+
+variable "ec2_instance_type" {
+  type        = string
+  description = "What instance type ec2 should adopt."
+}
+
+variable "user_data_file_path" {
+  type        = string
+  description = "File path to EC2 user data file"
 }
 
 variable "tags" {
