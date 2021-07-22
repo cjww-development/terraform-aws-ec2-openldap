@@ -1,16 +1,14 @@
-data "aws_ami" "amazon_linux_2" {
-  most_recent = true
-
+data "aws_ami" "ubuntu" {
   filter {
-    name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-*-18.04-amd64-server-*"]
+    name   = "image-id"
+    values = ["ami-0194c3e07668a7e36"]
   }
 
   owners = ["099720109477"]
 }
 
 resource "aws_instance" "openldap" {
-  ami           = data.aws_ami.amazon_linux_2.id
+  ami           = data.aws_ami.ubuntu.id
   instance_type = var.ec2_instance_type
 
   vpc_security_group_ids = [
